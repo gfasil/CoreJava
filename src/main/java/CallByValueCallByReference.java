@@ -12,6 +12,6 @@ public static void add(int x){
 
     int y=20;
         CallByValueCallByReference.add(y);
-        System.out.print("y "+y);
+        System.out.print("the value of y is "+y);
     }
 }
