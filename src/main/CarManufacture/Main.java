@@ -38,11 +38,15 @@ public class Main {
         Car f15=new Car("F150",20, Car.Color.RED,new Model(),50000);
         Car f16=new Car("F150",20, Car.Color.RED,new Model("F150 model 2019", LocalDate.now(),true, Model.Engine.V8),70000);
         System.out.println("which car do u want to buy? \n" + "type A for F15 \n type B for bugatti \n type C for Ferarri1 \n type e to exit" );
-        String carName= input.nextLine();
-        if(carName.equalsIgnoreCase("e")) input.close();
-        Car userCar = Main.buildcar(carName);
+        Car userCar=null;
 
-        System.out.println(userCar);
+        while(input.hasNext()){
+            String carName= input.nextLine();
+            if(carName.equalsIgnoreCase("e")) {input.close();break;}
+             userCar = Main.buildcar(carName);
+            System.out.println(userCar);
+        }
+
 
     }
 }
