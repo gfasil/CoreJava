@@ -42,9 +42,11 @@ public class Main {
 
         while(input.hasNext()){
             String carName= input.nextLine();
-            if(carName.equalsIgnoreCase("e")) {input.close();break;}
+            if(carName.equalsIgnoreCase("e")) {
+                input.close();break;}
              userCar = Main.buildcar(carName);
             System.out.println(userCar);
+            System.out.println("which car do u want to buy? \n" + "type A for F15 \n type B for bugatti \n type C for Ferarri1 \n type e to exit" );
         }
 
 
