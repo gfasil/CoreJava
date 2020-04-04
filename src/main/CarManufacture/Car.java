@@ -17,5 +17,27 @@ public class Car {
         this.model = model;
         this.price = price;
     }
-    public Car(){}
+    public Car(String carName,String name){
+        this.name = carName;
+        this.avgMilesPerGallon =50;
+        this.paintColor = Color.BLUE;
+        this.model = new Model(name);
+        this.price = 60000;
+    }
+    public void changeColor(Color color){
+        this.paintColor=color;
+
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "name='" + name + '\'' +
+                ", avgMilesPerGallon=" + avgMilesPerGallon +
+                ", paintColor=" + paintColor +
+                ", model=" + model +
+                ", price=" + price +
+                '}';
+    }
+    public  Car(){}
 }

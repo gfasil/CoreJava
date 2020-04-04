@@ -17,4 +17,21 @@ public class Model {
         this.engine = engine;
     }
     public Model(){}
+    public Model(String name){
+        this.name=name;
+        this.manDate=LocalDate.of(2018,11,28);
+        this.isFwd=true;
+        this.engine=Engine.V8;
+
+    }
+
+    @Override
+    public String toString() {
+        return "Model{" +
+                "name='" + name + '\'' +
+                ", manDate=" + manDate +
+                ", isFwd=" + isFwd +
+                ", engine=" + engine +
+                '}';
+    }
 }
