@@ -1,4 +1,4 @@
-package main.CarManufacture;
+package CarManufacture;
 
 
 public class Car {
