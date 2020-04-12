@@ -6,6 +6,7 @@ import java.util.Set;
 public class ArrayEx {
 
     public static <T> T[] findDuplicate(T[] input) {
+        assert input.length < 0 : "array is empty";
         if (input != null) {
             Set<T> inputlist = new HashSet<>();
             boolean flag = false;
@@ -30,7 +31,7 @@ public class ArrayEx {
 
     public static void main(String[] args) {
 
-        System.out.println(Arrays.toString(findDuplicate(new Integer[] { 1, 2, 4, 5, 5 })));
+        System.out.println(Arrays.toString(findDuplicate(null)));
         System.out.println("\ud837\udd6c");
     }
 }

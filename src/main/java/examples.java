@@ -1,8 +1,10 @@
 public class examples {
-    int x;
+     int x;
+    {
 
+        x=20;
+    }
     public static void main(String[] args) {
-
         // new User();}
         /*
          * for(int i=5;i>=1; i--) {
