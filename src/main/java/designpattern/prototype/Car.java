@@ -1,0 +1,80 @@
+package designpattern.prototype;
+
+
+import CarManufacture.Model;
+
+public abstract class Car implements Cloneable {
+
+    protected String name;
+    private int avgMilesPerGallon;
+    enum Color {RED,WHITE,BLUE}
+    private Color paintColor;
+    private Model model;
+    private double price;
+
+    public Car(String name, int avgMilesPerGallon, Color paintColor, Model model, double price) {
+        this.name = name;
+        this.avgMilesPerGallon = avgMilesPerGallon;
+        this.paintColor = paintColor;
+        this.model = model;
+        this.price = price;
+    }
+
+    public Model getModel() {
+        return model;
+    }
+
+
+    public Car(String carName, String name){
+        this.name = carName;
+        this.avgMilesPerGallon =50;
+        this.paintColor = Color.BLUE;
+        this.model = new Model(name);
+        this.price = 60000;
+    }
+    public Car(String carName, Model name){
+        this.name = carName;
+        this.avgMilesPerGallon =50;
+        this.paintColor = Color.BLUE;
+        this.model = name;
+        this.price = 60000;
+    }
+    public void changeColor(Color color){
+        this.paintColor=color;
+
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "name='" + name + '\'' +
+                ", avgMilesPerGallon=" + avgMilesPerGallon +
+                ", paintColor=" + paintColor +
+                ", model=" + model +
+                ", price=" + price +
+                '}';
+    }
+
+    public Color getPaintColor() {
+        return paintColor;
+    }
+    public abstract void drive();
+
+    public  Object clone(){
+
+        Object clone=null;
+        try {
+            clone=super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return clone;
+    }
+public String getName(){
+        return this.name;
+}
+    public Car(){
+
+
+    }
+}

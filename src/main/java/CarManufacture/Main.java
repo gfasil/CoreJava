@@ -1,6 +1,8 @@
 package CarManufacture;
 
 import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -49,6 +51,12 @@ public class Main {
             System.out.println(userCar);
             System.out.println("which car do u want to buy? \n" + "type A for F15 \n type B for bugatti \n type C for Ferarri1 \n type e to exit" + "\r");
         }
+
+
+
+        List<Object> b= Arrays.asList(new Integer[]{5,6});
+        List<? super Integer> a=b;
+                System.out.println(a.hashCode()+" " + b.hashCode()+ " "+  a.equals(b));
 
 
     }

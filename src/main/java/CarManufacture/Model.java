@@ -16,6 +16,15 @@ public class Model {
         this.isFwd = isFwd;
         this.engine = engine;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     public Model(){}
     public Model(String name){
         this.name=name;

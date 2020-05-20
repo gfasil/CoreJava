@@ -18,7 +18,9 @@ public class SimpleThread extends Thread  {
         for ( int i=0;i<x.length;i++){
             try{
                 System.out.println(x[i]*10);
-        //       Thread.sleep(3000);
+                System.out.printf("state %s, %s  \n",this.getName(),this.getState());
+               Thread.sleep(3000);
+                System.out.printf("state %s, %s  \n",this.getName(),this.getState());
             }
             catch (Exception
                     e){
@@ -32,17 +34,23 @@ public class SimpleThread extends Thread  {
 
     public static void main(String[] args) throws InterruptedException{
         Thread t1=new SimpleThread();
-
-
+        System.out.printf("state %s, %s  \n",t1.getName(),t1.getState());
         Thread t2= new Thread(new SimpleThread().new MyThread());
+        System.out.printf("state %s, %s  \n",t2.getName(),t2.getState());
         t1.start();
+        System.out.printf("state %s, %s  \n",t1.getName(),t1.getState());
         t2.start();
-        t2.setPriority(Thread.MIN_PRIORITY);
-        t1.setPriority(Thread.MAX_PRIORITY);
+        System.out.printf("state %s, %s  \n",t1.getName(),t1.getState());
+        System.out.printf("state %s, %s  \n",t1.getName(),t1.getState());
+        System.out.printf("state %s, %s  \n",t2.getName(),t2.getState());
+  //      t1.start();
+        t2.setPriority(Thread.MAX_PRIORITY);
+        t1.setPriority(Thread.MIN_PRIORITY);
         System.out.println(t1.getName() +  t2.isInterrupted() + t1.getPriority());
-     //   t2.join();
-       // t1.join();
-
+        t2.join();
+        System.out.printf("state %s, %s  \n",t1.getName(),t1.getState());
+        t1.join();
+        System.out.printf("state %s, %s  \n",t2.getName(),t2.getState());
 
         System.out.println(t2.getName() +  t2.isAlive());
 

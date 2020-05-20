@@ -10,6 +10,46 @@ public class Car {
     private Model model;
     private double price;
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAvgMilesPerGallon() {
+        return avgMilesPerGallon;
+    }
+
+    public void setAvgMilesPerGallon(int avgMilesPerGallon) {
+        this.avgMilesPerGallon = avgMilesPerGallon;
+    }
+
+    public Color getPaintColor() {
+        return paintColor;
+    }
+
+    public void setPaintColor(Color paintColor) {
+        this.paintColor = paintColor;
+    }
+
+    public Model getModel() {
+        return model;
+    }
+
+    public void setModel(Model model) {
+        this.model = model;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
     public Car(String name, int avgMilesPerGallon, Color paintColor, Model model, double price) {
         this.name = name;
         this.avgMilesPerGallon = avgMilesPerGallon;
@@ -41,3 +81,6 @@ public class Car {
     }
     public  Car(){}
 }
+
+
+

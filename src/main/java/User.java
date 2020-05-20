@@ -110,13 +110,21 @@ public class User {
         Answerable ans = new Answerable() {
             @Override
             public String answer(String input) {
+
                 return input + " brother";
             }
         };
         Answerable a = (inp) -> "\n hello" + inp;
 
         UserRole u = new UserRole();
-        System.out.println(ans.answer("hello") + a.answer(" woooow"));
+
+      //  System.out.println(ans.answer("hello") + a::answer);
+        System.out.println(""+example(a::answer,"fasil"));
+    }
+
+    public static String example(Answerable name,String input){
+        Long x=input.chars().count();
+        return name.answer("hello from example" + x);
     }
 
     public static class UserRole {

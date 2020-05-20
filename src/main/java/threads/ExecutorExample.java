@@ -3,7 +3,10 @@ package threads;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
+
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
 
 public class ExecutorExample {
 
@@ -11,6 +14,8 @@ public class ExecutorExample {
     public static void main(String[] args) {
         ExecutorService executorService= Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
         ScheduledExecutorService executorService1= Executors.newScheduledThreadPool(10);
+        ThreadFactory t=new ThreadFactoryBuilder().build();
+    
         executorService1.schedule(()->{
             System.out.println("NORMAL SCHEDULE");
 
