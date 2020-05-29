@@ -15,6 +15,12 @@ public class QuickUnion extends Union{
 
     }
 
+    @Override
+    public int find(int p) {
+        return 0;
+    }
+
+    @Override
     public int root(int i){
 
         while(i!=id[i]) i=id[i];

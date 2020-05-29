@@ -1,6 +1,4 @@
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Algorithm {
 
@@ -66,14 +64,30 @@ public class Algorithm {
     public void printSumPairs(int arr[], int sum){
             Set<Integer> set=new HashSet<>();
 
-            for(int i=0;i<arr.length;i++){
-                int temp=sum-arr[i]; // temp+arr[i]=sum
-                if(set.contains(temp)){
-                    System.out.println("Pair with given sum " + sum + " is (" + arr[i] + ", " + temp + ")");
-                }
-                set.add(temp);
-            }
+        for (int value : arr) {
+            int temp = sum - value; // temp+arr[i]=sum
+            if (set.contains(temp)) {
 
+                System.out.println("Pair with given sum " + sum + " is (" + value + ", " + temp + ")");
+            }
+            set.add(temp);
+        }
+
+    }
+
+    public void printSumPairs2(int arr[],int sum){
+
+        Map<Integer,Integer> map=new HashMap<>();
+
+        for(int i=0;i<arr.length;i++){
+
+            int temp=sum-arr[i];
+            if(map.containsKey(temp)){
+
+                System.out.println("Pair with given sum " + sum + " is (" + arr[map.get(temp)] + ", " + arr[i] + ")");
+            }
+            else map.put(arr[i],i);
+        }
     }
     public boolean printSumPairs1(int arr[], int sum) {
 
@@ -89,6 +103,27 @@ public class Algorithm {
         }
 
     return false;
+    }
+
+    public int findDuplicates(int arr[]){
+
+        Map<Integer,Integer> map=new HashMap<>();
+        for (int i = 0; i <arr.length ; i++) {
+            int temp=arr[i];
+            if(map.containsKey(temp)){
+
+                map.put(temp,map.get(temp)+1);
+            }
+            else map.put(temp,1);
+        }
+        Set<Map.Entry<Integer, Integer>> entrySet = map.entrySet();
+        for (Map.Entry<Integer, Integer> entry : entrySet)
+        { if (entry.getValue() > 1) {
+            System.out.println("Duplicate element from array : " + entry.getKey()); } }
+
+
+
+        return 0;
     }
 
     // merge sort

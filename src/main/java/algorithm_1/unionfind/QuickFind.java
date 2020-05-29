@@ -21,4 +21,9 @@ public class QuickFind extends Union {
 
     }
 
+    @Override
+    public int find(int p) {
+        return id[p];
+    }
+
 }
