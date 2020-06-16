@@ -7,7 +7,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class ListExample  {
+public abstract class ListExample  {
 
 
     public List<Integer> toIntegerList(String input){
@@ -22,8 +22,14 @@ public class ListExample  {
         return Stream.of(input.split(",",-1))
                 .collect(Collectors.toList());
     }
+    abstract void hey();
     public static void main(String[] args) {
+
+
         List<String> names= new ArrayList<>();
+       Collections.fill(names,"hello");
+       Collections.shuffle(names);
+       Collections.singletonList("hello");
         LinkedList<String> namequeue=new LinkedList<>();
         Set<String> set=new TreeSet<>();
         namequeue.add("fasil");

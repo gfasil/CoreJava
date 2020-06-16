@@ -5,7 +5,7 @@ public class examples {
         x=20;
     }
     public static void main(String[] args) {
-        // new User();}
+         // new User();}
         /*
          * for(int i=5;i>=1; i--) {
          * 

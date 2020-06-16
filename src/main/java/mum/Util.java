@@ -25,10 +25,10 @@ public class Util {
 ////        CompletableFuture<String> result= completableFuture.thenApply(value -> "hello " +value);
 ////       String x= result.get();
 ////        System.out.println(x);
-        CompletableFuture completableFuture
+        CompletableFuture<String> completableFuture
                 = CompletableFuture.supplyAsync(() -> "Knolders!");
-        CompletableFuture result
-                = completableFuture.thenRun(() -> System.out.println("Example with thenRun().")).thenAccept(x-> System.out.println(x));
+        CompletableFuture<Void> result
+                = completableFuture.thenRun(() -> System.out.println("Example with thenRun().")).thenAccept(System.out::println);
         result.get();
 
         Optional<String> s= Optional.of("hello");
